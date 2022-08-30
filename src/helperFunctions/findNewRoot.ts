@@ -11,7 +11,7 @@ export default function findNewRoot (subTree: iTree, newRoot: string, treeParts:
   // only then check for it's children nodes for newRoot.
   if (treeParts[0] === undefined) {
     for (let i = 0; i < subTree.children.length; i++) {
-      const childTree = {
+      const childTree: iTree = {
         ...subTree,
         children: subTree.children.filter(child => child.root !== subTree.children[i].root)
       }

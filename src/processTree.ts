@@ -10,19 +10,19 @@ export default function formTreeForNewRoot (tree: iTree, newRoot: string): iTree
   if (tree.root === newRoot) return tree
 
   // tree formation failure message.
-  const treeReformationFailureMsg = 'Provided new root is not a part of the Tree, hence no new tree was formed!'
+  const treeReformationFailureMsg: string = 'Provided new root is not a part of the Tree, hence no new tree was formed!'
 
   // we are checking for children at first level of tree.
   // If no children are found then we will return our failure message.
   if (tree.children.length === 0) return treeReformationFailureMsg
 
   // container to contain parts of the tree as sub tree at different indexes.
-  const treeParts = []
+  const treeParts: iTree[] = []
 
   findNewRoot(tree, newRoot, treeParts)
 
   // treeParts will be storing the sub tree with newRoot as it's root at index 0.
-  const subTreeHavingNewRoot = treeParts[0]
+  const subTreeHavingNewRoot: iTree = treeParts[0]
 
   // if newRoot is not a part of the given tree
   // then we will return tree reformation failure message.
